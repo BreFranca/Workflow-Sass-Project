@@ -31,28 +31,40 @@ framework/
 ├── package.json
 └── assets/
     ├── img/
-    │   └── ajax-loader.gif
+    │   └── carousel-loader.gif
     ├── css/
     │   └── framework.css
+    ├── fonts/
+    │   ├── carousel.eot
+    │   ├── carousel.svg
+    │   ├── carousel.ttf
+    │   └── carousel.woff
     ├── js/
-    │   ├── scripts.js
-    │   ├── scripts.min.js
+    │   ├── framework.js
+    │   ├── min/
+    │   │    └── framework.min.js
     │   └── libs/
+    │       ├── jquery.js
     │       └── carousel.js
     └── sass/
-        ├── framwork.sass
+        ├── framework.sass
         └── components/
+            ├── _accordions.scss
+            ├── _carousel.scss
+            ├── _classes.scss
             ├── _extends.scss
             ├── _flexBox.scss
-            ├── _gridFloat.scss
+            ├── _fonts.scss
+            ├── _grid.scss
             ├── _gridFlex.scss
+            ├── _gridFloat.scss
             ├── _mixins.scss
             ├── _modal.scss
             ├── _normalize.scss
+            ├── _padding.scss
+            ├── _margin.scss
             ├── _reset.scss
-            ├── _variables.scss
-            ├── _fonts.scss
-            └── _carousel.scss
+            └── _variables.scss
 
 ```
 ## Contributors

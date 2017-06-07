@@ -125,7 +125,7 @@
             _.windowWidth = 0;
             _.windowTimer = null;
 
-            dataSettings = $(element).data('slick') || {};
+            dataSettings = $(element).data('carousel') || {};
 
             _.options = $.extend({}, _.defaults, settings, dataSettings);
 

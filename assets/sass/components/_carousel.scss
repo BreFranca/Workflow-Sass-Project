@@ -139,7 +139,7 @@ $carousel-opacity-not-active: 0.25 !default;
 
 .carousel-list {
     .carousel-loading & {
-        background: #fff carousel-image-url("../img/ajax-loader.gif") center center no-repeat;
+        background: #fff carousel-image-url("../img/carousel-loader.gif") center center no-repeat;
     }
 }
 

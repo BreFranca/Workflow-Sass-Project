@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  */
 .modal-bg { 
-	position: fixed; 
+	position: fixed;
 	height: 100%;
 	width: 100%;
 	background: #000;
@@ -12,16 +12,16 @@
 	z-index: 100;
 	display: none;
 	top: 0;
-	left: 0; 
+	left: 0;
 }
 
 .modal {
-	visibility: hidden;
-	top: 100px; 
+	display: none;
+	top: 100px;
 	left: 50%;
 	margin-left: -300px;
 	width: 520px;
-	background: #eee url(modal-gloss.png) no-repeat -200px -80px;
+	background: #eee;
 	position: absolute;
 	z-index: 101;
 	padding: 30px 40px 34px;
@@ -37,5 +37,5 @@
 		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
 		font-weight: bold;
 		cursor: pointer;
-	} 
+	}
 }

@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  */
 
-// ## ## ## ##  ANCHOR   ## ## ## ## //
+// ## ## ## ##  ANCHOR  ## ## ## ## //
 $('.scroll').click(function(e) {
   var nav = $(this).attr('data-href').replace('#','');
 
@@ -20,7 +20,7 @@ $('.scroll').click(function(e) {
   }
 });
 
-// ## ## ## ##  ACCORDION   ## ## ## ## //
+// ## ## ## ##  ACCORDION  ## ## ## ## //
 $('.accordion .title').click(function(e) {
     speed = 500;
 
@@ -39,14 +39,14 @@ $('.accordion .title').click(function(e) {
     }
 });
 
-// ## ## ## ##  MODAL   ## ## ## ## //
-var modal = $('a[data-modal-id]'),
+// ## ## ## ##  MODAL  ## ## ## ## //
+var modal = $('a[data-modal]'),
     modalBG = $('.modal-bg'),
     btCloseModal = $('.close-modal');
 
 function OpenModal(e) {
     e.preventDefault();
-    var modalLocation = $(this).attr('data-modal-id');
+    var modalLocation = $(this).attr('data-modal');
     $('#'+modalLocation).fadeIn();
     $(modalBG).fadeIn();
 }
@@ -54,9 +54,12 @@ function OpenModal(e) {
 function CloseModal(e) {
     e.preventDefault();
     $(modalBG).fadeOut();
-    $('.theme-modal').fadeOut();
+    $('.modal').fadeOut();
 }
 
 $(modal).bind("click", OpenModal);
 $(modalBG).bind("click", CloseModal);
 $(btCloseModal).bind("click", CloseModal);
+
+// ## ## ## ##  CAROUSEL  ## ## ## ## //
+$('.carousel').slick();
