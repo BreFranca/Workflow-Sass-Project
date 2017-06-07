@@ -44,25 +44,32 @@ framework/
     │   ├── min/
     │   │    └── framework.min.js
     │   └── libs/
-    │       ├── jquery.js
-    │       └── carousel.js
+    │       ├── animate.js
+    │       ├── carousel.js
+    │       ├── gallery.js
+    │       ├── jquery-3.1.0.min.js
+    │       ├── mask.js
+    │       ├── navs.js
+    │       └── parallax.js
     └── sass/
         ├── framework.sass
         └── components/
             ├── _accordions.scss
+            ├── _animate.scss
             ├── _carousel.scss
             ├── _classes.scss
             ├── _extends.scss
             ├── _flexBox.scss
             ├── _fonts.scss
+            ├── _gallery.scss
             ├── _grid.scss
             ├── _gridFlex.scss
             ├── _gridFloat.scss
             ├── _mixins.scss
             ├── _modal.scss
+            ├── _nav.scss
             ├── _normalize.scss
             ├── _padding.scss
-            ├── _margin.scss
             ├── _reset.scss
             └── _variables.scss
 
