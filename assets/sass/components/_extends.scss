@@ -1,0 +1,55 @@
+// EXTENDS CLASSES
+%container{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+}
+
+%containerTable{
+	display:table;
+}
+
+%inline-block{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+%centralize{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+%right{
+	float:right;
+}
+
+%left{
+	float:left;
+}
+
+%hide{
+	display:none;
+}
+%show{
+	display:block;
+}
+
+// %column{
+// 	float:left;
+// 	padding:25px 0 50px 0;
+// 	box-sizing:border-box;
+// 	position: relative;
+// }
+
+//APLICAR NO PSEUDO ELEMENTO ::AFTER
+%clearfix{					
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    visibility: hidden;
+    overflow: hidden;
+}

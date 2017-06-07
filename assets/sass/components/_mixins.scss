@@ -1,0 +1,179 @@
+// MIXIN PREFIXES
+@mixin position($position, $top, $right, $bottom, $left) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+	padding-top: $top;
+	padding-right: $right;
+	padding-bottom: $bottom;
+	padding-left: $left;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+	margin-top: $top;
+	margin-right: $right;
+	margin-bottom: $bottom;
+	margin-left: $left;
+}
+
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin square($size) {
+	@include size($size, $size);
+}
+
+@mixin border-radius($x){
+	-webkit-border-radius: $x;
+	 -khtml-border-radius: $x;
+	   -moz-border-radius: $x;
+	    -ms-border-radius: $x;
+	     -o-border-radius: $x;
+	        border-radius: $x;
+}
+
+@mixin user-select($select){
+    -webkit-user-select: $select;
+       -moz-user-select: $select;
+        -ms-user-select: $select;
+    		user-select: $select;
+}
+
+@mixin border-top-radius($radius) {
+	border-top-right-radius: $radius;
+	 border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+	border-bottom-right-radius: $radius;
+	   border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+	border-bottom-right-radius: $radius;
+	 border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+	border-bottom-left-radius: $radius;
+	   border-top-left-radius: $radius;
+}
+
+@mixin transform($x){
+	-webkit-transform: $x;
+	   -moz-transform: $x;
+	    -ms-transform: $x;
+	     -o-transform: $x;
+	        transform: $x;
+}
+
+@mixin transition($x:all, $y:1s, $z:ease, $w:0s){
+	-webkit-transition: $x $y $z $w;
+	 -khtml-transition: $x $y $z $w;
+	   -moz-transition: $x $y $z $w;
+	    -ms-transition: $x $y $z $w;
+	     -o-transition: $x $y $z $w;
+	        transition: $x $y $z $w;
+}
+
+@mixin box-shadow($x:1px, $y:1px, $z:1px, $w:rgba(0,0,0,.5), $k:outset ){
+	-webkit-box-shadow: $x $y $z $w $k;
+	 -khtml-box-shadow: $x $y $z $w $k;
+	   -moz-box-shadow: $x $y $z $w $k;
+	    -ms-box-shadow: $x $y $z $w $k;
+	     -o-box-shadow: $x $y $z $w $k;
+	        box-shadow: $x $y $z $w $k;
+}
+
+@mixin opacity($x){
+	-webkit-opacity: $x;
+	 -khtml-opacity: $x;
+	   -moz-opacity: $x;
+	    -ms-opacity: $x;
+	     -o-opacity: $x;
+	        opacity: $x;
+}
+
+@mixin animation($nome, $x:1s, $y:ease, $z:0s, $w:alternate){
+	-webkit-animation: $nome $x $y $z $w;
+	 -khtml-animation: $nome $x $y $z $w;
+	   -moz-animation: $nome $x $y $z $w;
+	    -ms-animation: $nome $x $y $z $w;
+	     -o-animation: $nome $x $y $z $w;
+	        animation: $nome $x $y $z $w;
+}
+
+@mixin box-sizing($x:border-box){
+	-webkit-box-sizing: $x;
+	 -khtml-box-sizing: $x;
+	   -moz-box-sizing: $x;
+	    -ms-box-sizing: $x;
+	     -o-box-sizing: $x;
+	        box-sizing: $x;
+}
+
+@mixin cover-background($img-uri) {
+    background: url($img-uri) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin input-placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+// FONT INCLUDE
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+           url('#{$file-path}.woff') format('woff'),
+           url('#{$file-path}.ttf') format('truetype'),
+           url('#{$file-path}.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+  // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: $font-family;
+        src: url('#{$file-path}.svg##{$font-family}') format('svg');
+    }
+  }
+}
+
+// MEDIA QUERIES 
+@mixin media-lg {
+  @media (max-width: #{$media-large}) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (max-width: #{$media-medium}) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (max-width: #{$media-large}) {
+    @content;
+  }
+}

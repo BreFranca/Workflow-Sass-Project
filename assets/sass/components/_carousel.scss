@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+/* Slider */
+
+.carousel-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    @include user-select(none);
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.carousel-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.carousel-slider .carousel-track,
+.carousel-slider .carousel-list {
+    @include transform(translate3d(0, 0, 0));
+}
+
+.carousel-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .carousel-loading & {
+        visibility: hidden;
+    }
+}
+.carousel-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.carousel-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .carousel-initialized & {
+        display: block;
+    }
+
+    .carousel-loading & {
+        visibility: hidden;
+    }
+
+    .carousel-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+.carousel-arrow.carousel-hidden {
+    display: none;
+}
+
+// Default Variables
+
+// carousel icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+
+$carousel-font-path: "../fonts/" !default;
+$carousel-font-family: "carousel" !default;
+$carousel-loader-path: "./" !default;
+$carousel-arrow-color: white !default;
+$carousel-dot-color: black !default;
+$carousel-dot-color-active: $carousel-dot-color !default;
+$carousel-prev-character: "\2190" !default;
+$carousel-next-character: "\2192" !default;
+$carousel-dot-character: "\2022" !default;
+$carousel-dot-size: 6px !default;
+$carousel-opacity-default: 0.75 !default;
+$carousel-opacity-on-hover: 1 !default;
+$carousel-opacity-not-active: 0.25 !default;
+
+@function carousel-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    }
+    @else {
+        @return url($carousel-loader-path + $url);
+    }
+}
+
+@function carousel-font-url($url) {
+    @if function-exists(font-url) {
+        @return font-url($url);
+    }
+    @else {
+        @return url($carousel-font-path + $url);
+    }
+}
+
+/* Slider */
+
+.carousel-list {
+    .carousel-loading & {
+        background: #fff carousel-image-url("../img/ajax-loader.gif") center center no-repeat;
+    }
+}
+
+/* Icons */
+@if $carousel-font-family == "carousel" {
+    @font-face {
+        font-family: "carousel";
+        src: carousel-font-url("carousel.eot");
+        src: carousel-font-url("carousel.eot?#iefix") format("embedded-opentype"), carousel-font-url("carousel.woff") format("woff"), carousel-font-url("carousel.ttf") format("truetype"), carousel-font-url("carousel.svg#carousel") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+/* Arrows */
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    @include transform(translate(0 , -50%));
+    padding: 0;
+    border: none;
+    outline: none;
+    &:hover, &:focus {
+        outline: none;
+        background: transparent;
+        color: transparent;
+        &:before {
+            opacity: $carousel-opacity-on-hover;
+        }
+    }
+    &.carousel-disabled:before {
+        opacity: $carousel-opacity-not-active;
+    }
+    &:before {
+        font-family: $carousel-font-family;
+        font-size: 20px;
+        line-height: 1;
+        color: $carousel-arrow-color;
+        opacity: $carousel-opacity-default;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.carousel-prev {
+    left: -25px;
+    [dir="rtl"] & {
+        left: auto;
+        right: -25px;
+    }
+    &:before {
+        content: $carousel-prev-character;
+        [dir="rtl"] & {
+            content: $carousel-next-character;
+        }
+    }
+}
+
+.carousel-next {
+    right: -25px;
+    [dir="rtl"] & {
+        left: -25px;
+        right: auto;
+    }
+    &:before {
+        content: $carousel-next-character;
+        [dir="rtl"] & {
+            content: $carousel-prev-character;
+        }
+    }
+}
+
+/* Dots */
+
+.carousel-dotted.carousel-slider {
+    margin-bottom: 30px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: -25px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 20px;
+            width: 20px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            &:hover, &:focus {
+                outline: none;
+                &:before {
+                    opacity: $carousel-opacity-on-hover;
+                }
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: $carousel-dot-character;
+                width: 20px;
+                height: 20px;
+                font-family: $carousel-font-family;
+                font-size: $carousel-dot-size;
+                line-height: 20px;
+                text-align: center;
+                color: $carousel-dot-color;
+                opacity: $carousel-opacity-not-active;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        &.carousel-active button:before {
+            color: $carousel-dot-color-active;
+            opacity: $carousel-opacity-default;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@include font-face(Lato-Black, 'fonts/lato_black/Lato-Black', 400, normal);
+@include font-face(Lato-Heavy, 'fonts/lato_heavy/Lato-Heavy', 400, normal);
+@include font-face(Lato-LightItalic, 'fonts/lato_light_italic/Lato-LightItalic', 400, normal);
+@include font-face(Lato-Light, 'fonts/lato_light/Lato-Light', 400, normal);
+@include font-face(Lato-Medium, 'fonts/lato_medium/Lato-Medium', 400, normal);
+@include font-face(Lato-Bold, 'fonts/lato_bold/Lato-Bold', 400, normal);
+@include font-face(Lato, 'fonts/lato/Lato', 400, normal);
+
+%Lato-Black{
+	font-family: 'Lato-Black';
+	font-weight: bold;
+}
+
+%Lato-Bold{
+	font-family: 'Lato-Bold';
+	font-weight: bold;
+}
+
+%Lato-Heavy{
+	font-family: 'Lato-Heavy';
+}
+
+
+%Lato-Medium{
+	font-family: 'Lato-Medium';
+}
+
+%Lato-LightItalic{
+	font-family: 'Lato-LightItalic';
+}
+
+%Lato-Light{
+	font-family: 'Lato-Light';
+}
+
+%Lato{
+	font-family: 'Lato';
+}
