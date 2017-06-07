@@ -1,4 +1,8 @@
-// MIXIN PREFIXES
+/**
+ * --------------------------------------------------------------------------
+ * MIXIN PREFIXES
+ * --------------------------------------------------------------------------
+ */
 @mixin position($position, $top, $right, $bottom, $left) {
 	position: $position;
 	top: $top;
@@ -159,21 +163,27 @@
   }
 }
 
-// MEDIA QUERIES 
+// MEDIA QUERIES
+@mixin media-xl {
+  @media (min-width: #{$media-xLarge}) {
+    @content;
+  }
+}
+
 @mixin media-lg {
-  @media (max-width: #{$media-large}) {
+  @media (min-width: #{$media-large}) {
     @content;
   }
 }
 
 @mixin media-md {
-  @media (max-width: #{$media-medium}) {
+  @media (min-width: #{$media-medium}) {
     @content;
   }
 }
 
 @mixin media-sm {
-  @media (max-width: #{$media-large}) {
+  @media (min-width: #{$media-small}) {
     @content;
   }
 }

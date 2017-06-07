@@ -1,8 +1,9 @@
-/*	--------------------------------------------------
-	Reveal Modals
-	-------------------------------------------------- */
-
-.reveal-modal-bg { 
+/**
+ * --------------------------------------------------------------------------
+ * MODAL
+ * --------------------------------------------------------------------------
+ */
+.modal-bg { 
 	position: fixed; 
 	height: 100%;
 	width: 100%;
@@ -14,7 +15,7 @@
 	left: 0; 
 }
 
-.reveal-modal {
+.modal {
 	visibility: hidden;
 	top: 100px; 
 	left: 50%;
@@ -26,23 +27,7 @@
 	padding: 30px 40px 34px;
 	@include border-radius(5px);
 	@include box-shadow(0 0 10px rgba(0,0,0,.4));
-	&.small {
-		width: 200px;
-		margin-left: -140px;
-	}
-	&.medium {
-		width: 400px;
-		margin-left: -240px;
-	}
-	&.large {
-		width: 600px;
-		margin-left: -340px;
-	}
-	&.xlarge {
-		width: 800px;
-		margin-left: -440px;
-	}
-	.close-reveal-modal {
+	.close-modal {
 		font-size: 22px;
 		line-height: .5;
 		position: absolute;

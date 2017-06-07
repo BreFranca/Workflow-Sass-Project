@@ -3,8 +3,55 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Framework</title>
+	<link rel="stylesheet" href="assets/css/framework.css">
 </head>
 <body>
-	
+	<div class="container flex" style="height: 50px;">
+		<div class="col-1 col-lg-2" style="background: #000; height: 50px;"></div>
+		<div class="col-2 col-lg-3" style="background: #ccc; height: 50px;"></div>
+		<div class="col-9 col-lg-4" style="background: #ff0000; height: 50px;"></div>
+	</div>
+
+	<div class="container float fluid" style="height: 50px;">
+		<div class="col-1 col-lg-2" style="background: #000; height: 50px;"></div>
+		<div class="col-2 col-lg-3" style="background: #ccc; height: 50px;"></div>
+		<div class="col-9 col-lg-4" style="background: #ff0000; height: 50px;"></div>
+	</div>
+
+	<div class="container float" style="height: 50px;">
+		<div class="row">
+			<div class="col-12">
+				<div class="col-1 col-lg-2" style="background: #000; height: 50px;"></div>
+				<div class="col-2 col-lg-3" style="background: #ccc; height: 50px;"></div>
+				<div class="col-9 col-lg-4" style="background: #ff0000; height: 50px;"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="align-center">
+		<div class="container flex horizontal-center">
+			<h1>Lorem Ipsum Dolor</h1>
+		</div>
+	</div>
+	<div id="accordions">
+		<div class="accordion">
+			<div class="title" data-href="accordion1">
+				<h3>Lorem ipsum dolor</h3>
+			</div>
+			<div class="content in" data-accordion="accordion1" collapse="out">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi voluptate maxime. Voluptatum optio temporibus, reiciendis qui cumque, est vero harum quis laboriosam, debitis officiis? Voluptate officia, cumque natus omnis.
+			</div>
+		</div>
+		<div class="accordion">
+			<div class="title" data-href="accordion2">
+				<h3>Lorem ipsum dolor</h3>
+			</div>
+			<div class="content" data-accordion="accordion2" collapse="out">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi voluptate maxime. Voluptatum optio temporibus, reiciendis qui cumque, est vero harum quis laboriosam, debitis officiis? Voluptate officia, cumque natus omnis.
+			</div>
+		</div>
+	</div>
+	<script src="assets/js/libs/jquery-3.1.0.min.js"></script>
+	<script src="assets/js/min/framework.min.js"></script>
 </body>
 </html>

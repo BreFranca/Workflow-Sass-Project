@@ -1,67 +1,21 @@
-/* GRID */
+/**
+ * --------------------------------------------------------------------------
+ * FLOAT GRID
+ * --------------------------------------------------------------------------
+ */
+@import "grid";
 
-@mixin row($maxWidth){
-	width:100%;
-	max-width: $maxWidth;
-	margin:0 auto;
-}
-
-@mixin coluna($coluna){
-	width: (100%) / $coluna;
-}
-
-.row{
-	@include row(960px);
-}
-
-[class^="col-"]{
-	float:left;
-}
-
-.col-1{
-	@include coluna(1);
-}
-
-.col-2{
-	@include coluna(2);
-}
-
-.col-3{
-	@include coluna(3);
-}
-
-.col-4{
-	@include coluna(4);
-}
-
-.col-5{
-	@include coluna(5);
-}
-
-.col-6{
-	@include coluna(6);
-}
-
-.col-7{
-	@include coluna(7);
-}
-
-.col-8{
-	@include coluna(8);
-}
-
-.col-9{
-	@include coluna(9);
-}
-
-.col-10{
-	@include coluna(10);
-}
-
-.col-11{
-	@include coluna(11);
-}
-
-.col-12{
-	@include coluna(12);
+.container {
+	&.float {
+		[class^="col-lg-"], [class^="col-md-"], [class^="col-sm-"], [class^="col-"]{
+			float:left;
+		}
+	}
+	&::after {
+		@extend %clearfix;
+	}
+	&.fluid {
+		max-width: 90%;
+		@include margin(null, auto, null, auto);
+	}
 }

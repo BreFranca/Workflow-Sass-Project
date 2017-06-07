@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
       },
       my_target : {
         files : {
-          'assets/js/min/script.min.js' : [ 'assets/js/script.js' ]
+          'assets/js/min/framework.min.js' : [ 'assets/js/framework.js' ]
         }
       }
     }, // uglify

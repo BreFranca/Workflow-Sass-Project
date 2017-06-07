@@ -1,38 +1,43 @@
-@include font-face(Lato-Black, 'fonts/lato_black/Lato-Black', 400, normal);
-@include font-face(Lato-Heavy, 'fonts/lato_heavy/Lato-Heavy', 400, normal);
-@include font-face(Lato-LightItalic, 'fonts/lato_light_italic/Lato-LightItalic', 400, normal);
-@include font-face(Lato-Light, 'fonts/lato_light/Lato-Light', 400, normal);
-@include font-face(Lato-Medium, 'fonts/lato_medium/Lato-Medium', 400, normal);
-@include font-face(Lato-Bold, 'fonts/lato_bold/Lato-Bold', 400, normal);
-@include font-face(Lato, 'fonts/lato/Lato', 400, normal);
+/**
+ * --------------------------------------------------------------------------
+ * FONTS
+ * --------------------------------------------------------------------------
+ */
+// @include font-face(Font, 'fonts/Font', 400, normal);
 
-%Lato-Black{
-	font-family: 'Lato-Black';
+// %Font{
+// 	font-family: 'Lato-Black';
+// 	font-weight: bold;
+// }
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5 ,h6 {
 	font-weight: bold;
 }
-
-%Lato-Bold{
-	font-family: 'Lato-Bold';
-	font-weight: bold;
+.h1, h1 {
+	font-size: 36px;
 }
 
-%Lato-Heavy{
-	font-family: 'Lato-Heavy';
+.h2, h2 {
+	font-size: 30px;
 }
 
-
-%Lato-Medium{
-	font-family: 'Lato-Medium';
+.h3, h3 {
+	font-size: 24px;
 }
 
-%Lato-LightItalic{
-	font-family: 'Lato-LightItalic';
+.h4, h4 {
+	font-size: 18px;
 }
 
-%Lato-Light{
-	font-family: 'Lato-Light';
+.h5, h5 {
+	font-size: 14px;
 }
 
-%Lato{
-	font-family: 'Lato';
+.h6, h6 {
+	font-size: 12px;
+}
+
+p {
+	font-size: 16px;
 }

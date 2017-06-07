@@ -1,0 +1,81 @@
+/**
+ * --------------------------------------------------------------------------
+ * GERAL GRID
+ * --------------------------------------------------------------------------
+ */
+@mixin column($column){
+	// width: (100%) / $column;
+	width: (($column/12) * 100%);
+}
+
+.container {
+	@include padding(null, 15px, null, 15px);
+	@include margin(null, auto, null, auto);
+	max-width: none;
+	@include media-sm {
+		max-width: 576px;
+	}
+	@include media-md {
+		max-width: 768px;
+	}
+	@include media-lg {
+		max-width: 996px;
+	}
+	@include media-xl {
+		max-width: 1120px;
+	}
+	&.fluid {
+		max-width: 90%;
+	}
+}
+
+.row {
+	@include margin(null, auto, null, auto);
+	@include media-sm {
+		@include margin(null, -15px, null, -15px);
+	}
+}
+
+$column: col;
+@for $col from 1 through 12 {
+	.#{$column}-#{$col} {
+		@include column($col);
+		// width: ($col/12) * 100%;
+	}
+}
+
+@include media-sm {
+	$column: col-sm;
+	@for $col from 1 through 12 {
+		.#{$column}-#{$col} {
+			@include column($col);
+		}
+	}
+}
+
+@include media-md {
+	$column: col-md;
+	@for $col from 1 through 12 {
+		.#{$column}-#{$col} {
+			@include column($col);
+		}
+	}
+}
+
+@include media-lg {
+	$column: col-lg;
+	@for $col from 1 through 12 {
+		.#{$column}-#{$col} {
+			@include column($col);
+		}
+	}
+}
+
+@include media-xl {
+	$column: col-xl;
+	@for $col from 1 through 12 {
+		.#{$column}-#{$col} {
+			@include column($col);
+		}
+	}
+}
