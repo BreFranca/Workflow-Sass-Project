@@ -1,0 +1,62 @@
+/**
+ * --------------------------------------------------------------------------
+ * NAVBAR MOBILE STYLE
+ * --------------------------------------------------------------------------
+ */
+.nav_btn {
+	display: block;
+	height: 100%;
+}
+.nav_icon {
+    width: 48px;
+    height: 36px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    z-index: 2; 
+    float: right;
+
+
+    .nav_icon-bar {
+	    background-color: #000;
+	    position: absolute;
+	    left: 10%;
+	    height: 4px;
+	    width: 80%; 
+	}
+
+	.nav_icon-bar {
+		&:first-child {
+			top: 4px;
+			@include transition(all, 0.3s, ease-in-out);
+			@include transform(rotate(0deg));
+		}
+	}
+
+	.nav_icon-bar:nth-child(2) {
+		top: 50%;
+		margin-top: -3px;
+		display: block; 
+	}
+
+	.nav_icon-bar {
+		&:last-child {
+			bottom: 6px;
+			@include transition(all, 0.3s, ease-in-out);
+			@include transform(rotate(0deg));
+		}
+	}
+}
+
+.nav_open .nav_icon-bar:first-child {
+  	top: 16px;
+  	@include transform(rotate(45deg));
+}
+.nav_open .nav_icon-bar:nth-child(2) {
+  	display: none; 
+}
+.nav_open .nav_icon-bar:last-child {
+  	bottom: 17px;
+  	@include transform(rotate(-45deg));
+}
+
